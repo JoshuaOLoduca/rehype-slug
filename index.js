@@ -1,5 +1,10 @@
 /**
  * @typedef {import('hast').Root} Root
+ * @typedef {string|undefined} prefix
+ * @typedef Options
+ *   Configuration.
+ * @property {prefix} [prefix]
+ *   How to create links.
  */
 
 import Slugger from 'github-slugger'
@@ -13,15 +18,17 @@ const slugs = new Slugger()
 /**
  * Plugin to add `id`s to headings.
  *
- * @type {import('unified').Plugin<Array<void>, Root>}
+ * @type {import('unified').Plugin<[Options?]|void[], Root>}
  */
-export default function rehypeSlug() {
+export default function rehypeSlug(options = {}) {
   return (tree) => {
     slugs.reset()
+    const prefix = options?.prefix ? options.prefix : ''
 
     visit(tree, 'element', (node) => {
       if (headingRank(node) && node.properties && !hasProperty(node, 'id')) {
-        node.properties.id = slugs.slug(toString(node))
+        const id = `${prefix}${toString(node)}`
+        node.properties.id = slugs.slug(id)
       }
     })
   }
