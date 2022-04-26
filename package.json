@@ -1,6 +1,6 @@
 {
-  "name": "rehype-slug",
-  "version": "5.0.1",
+  "name": "@jloduca/rehype-slug",
+  "version": "5.0.2",
   "description": "rehype plugin to add `id` attributes to headings",
   "license": "MIT",
   "keywords": [
@@ -19,9 +19,10 @@
     "type": "opencollective",
     "url": "https://opencollective.com/unified"
   },
-  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "author": "Joshua Loduca",
   "contributors": [
-    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Joshua Loduca"
   ],
   "sideEffects": false,
   "type": "module",
