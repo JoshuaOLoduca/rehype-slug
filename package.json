@@ -1,5 +1,5 @@
 {
-  "name": "@jloduca/rehype-slug",
+  "name": "@jolduca/rehype-slug",
   "version": "5.0.2",
   "description": "rehype plugin to add `id` attributes to headings",
   "license": "MIT",
